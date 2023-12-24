@@ -533,7 +533,7 @@ menu{
     }
 
     .Scroller__container{
-        width: 65%;
+        width: 100%;
     }
 
     .Scroller__inner .All__same__1{
@@ -682,7 +682,7 @@ menu{
     }
 
     .Scroller__container{
-        width: 65%;
+        width: 100%;
     }
 
     .Scroller__inner .All__same__1{
@@ -767,6 +767,26 @@ menu{
     .Hero-content-right .photo{
         width: 400px;
     }
+
+    .Scroller__container{
+        width: 100%;
+    }
+
+    .Scroller__inner .All__same__1{
+        width: 130px;
+        padding-left: 3rem;
+    }
+
+    .Scroller__inner .All__same__2{
+        width: 130px;
+        padding-left: 3rem;
+    }
+
+    @keyframes scroll {
+        to {
+            transform: translate(calc(-50% - 1.5rem));
+        }
+    }
 }
 
 @media (max-width:400px) {
@@ -839,7 +859,7 @@ menu{
     }
 
     .Scroller__container{
-        width: 65%;
+        width: 100%;
     }
 
     .Scroller__inner .All__same__1{
