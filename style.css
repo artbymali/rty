@@ -80,11 +80,6 @@ menu{
     color: black;
 }
 
-.Hero{
-    margin-bottom: 40px
-    ;
-}
-
 .Hero-container{
     padding-top: 120px;
     /* margin-bottom: 20px; */
@@ -255,6 +250,64 @@ menu{
     }
 }
 
+.Scroller{
+    width: 100%;
+    background: #020710;
+}
+
+.Scroller__container{
+    max-width: 86%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Scroller__inner{
+    border: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 30px;
+    flex-wrap: wrap;
+    /* gap: 5rem; */
+}
+
+
+.Scroller__inner .All__same__1{
+    padding-left: 5rem;
+    width: 220px;
+    opacity: 0.8;
+}
+
+.Scroller__inner .All__same__2{
+    padding-left: 5rem;
+    width: 200px;
+    opacity: 0.8;
+}
+
+.Scroller__container[data-animated=true] {
+    overflow: hidden;
+}
+
+.Scroller__container[data-animated=true] .Scroller__inner{
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 2.5rem));
+    }
+}
+
+
+
+
+
+
+
+
+
 /* ***<<< desktop-brakepoint >>>*** */
 
 @media(max-width: 1260px){
@@ -361,6 +414,22 @@ menu{
     .Hero-Tag-right-content span{
         font-size: 13px;
     }
+
+    .Scroller__inner .All__same__1{
+        width: 180px;
+        padding-left: 4rem;
+    }
+
+    .Scroller__inner .All__same__2{
+        width: 180px;
+        padding-left: 4rem;
+    }
+
+    @keyframes scroll {
+        to {
+            transform: translate(calc(-50% - 2rem));
+        }
+    }
 }
 
 /* ***<<< Tablet >>>*** */
@@ -461,6 +530,26 @@ menu{
 
     .Hero-Tag-right-content h4{
         font-size: 40px;
+    }
+
+    .Scroller__container{
+        width: 65%;
+    }
+
+    .Scroller__inner .All__same__1{
+        width: 160px;
+        padding-left: 3rem;
+    }
+
+    .Scroller__inner .All__same__2{
+        width: 160px;
+        padding-left: 3rem;
+    }
+
+    @keyframes scroll {
+        to {
+            transform: translate(calc(-50% - 2rem));
+        }
     }
 }
 
@@ -590,6 +679,26 @@ menu{
 
     .Hero-Tag-right-content span{
         font-size: 15px;
+    }
+
+    .Scroller__container{
+        width: 65%;
+    }
+
+    .Scroller__inner .All__same__1{
+        width: 150px;
+        padding-left: 3rem;
+    }
+
+    .Scroller__inner .All__same__2{
+        width: 150px;
+        padding-left: 3rem;
+    }
+
+    @keyframes scroll {
+        to {
+            transform: translate(calc(-50% - 1.5rem));
+        }
     }
 
 
@@ -727,5 +836,25 @@ menu{
 
     .Hero-content-right .photo{
         width: 320px;
+    }
+
+    .Scroller__container{
+        width: 65%;
+    }
+
+    .Scroller__inner .All__same__1{
+        width: 130px;
+        padding-left: 3rem;
+    }
+
+    .Scroller__inner .All__same__2{
+        width: 130px;
+        padding-left: 3rem;
+    }
+
+    @keyframes scroll {
+        to {
+            transform: translate(calc(-50% - 1.5rem));
+        }
     }
 }
