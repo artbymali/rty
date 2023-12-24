@@ -769,7 +769,11 @@ menu{
     }
 
     .Scroller__container{
-        width: 100%;
+        max-width: 90%;
+    }
+
+    .Scroller__inner{
+        padding-bottom: 15px;
     }
 
     .Scroller__inner .All__same__1{
@@ -859,16 +863,20 @@ menu{
     }
 
     .Scroller__container{
-        width: 100%;
+        max-width: 90%;
+    }
+    
+    .Scroller__inner{
+        padding-block: 18px;
     }
 
     .Scroller__inner .All__same__1{
-        width: 130px;
+        width: 135px;
         padding-left: 3rem;
     }
 
     .Scroller__inner .All__same__2{
-        width: 130px;
+        width: 135px;
         padding-left: 3rem;
     }
 
