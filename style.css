@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .Home{
     background: #020710;
     background-image: url(bg.png); 
@@ -14,6 +18,7 @@
 
 header{
     width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 .Header-conatiner{
@@ -23,9 +28,28 @@ header{
     padding-top: 25px;
 }
 
+header.scroll {
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    z-index: +9999999;
+    transition: background-color 0.2s ease-in-out;;
+}
+
+/* .scroll {
+    background: rgba(0, 0, 0, 0.72);
+    position: fixed;
+    z-index: +9999999;
+    transition: background-color 0.2s ease-in-out;
+  } */
+
+.scroll .Header-conatiner {
+    padding: 10px;
+}
+
 .logo h2{
     font-family: inter;
-    font-size: 30px;
+    font-size: 25px;
     color: white;
 }
 
@@ -45,6 +69,7 @@ nav ul{
 nav ul li a{
     font-family: inter;
     font-weight: 500;
+    font-size: 13px;
     text-decoration: none;
     color: white;
     cursor: pointer;
@@ -62,13 +87,13 @@ menu{
 }
 
 .button button{
-    padding: 8px 25px;
+    padding: 6px 20px;
     background: none;
     border: 0.8px solid white;
     border-radius: 40px;
     color: white;
     font-family: inter;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 500;
     outline: none;
     cursor: pointer;
@@ -311,18 +336,19 @@ menu{
     width: 87%;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 100px;
 }
 
 .About-content{
     display: flex;
+    justify-content: space-between;
     position: relative;
     padding-top: 40px;
 }
 
 .About-content-left{
     position: relative;
-    width: 45%;
+    /* width: 50%; */
+    width: 450px;
     margin: 0 40px 0 0;
 }
 
@@ -348,9 +374,9 @@ menu{
 }
 
 .About-content-right{
-    width: 55%;
-    padding: 100px 10px 0 10px;
-    margin: 0 0 40px 0;
+    width: 50%;
+    padding: 120px 10px 0 10px;
+    margin: 0 0 0 40px;
 }
 
 .About-content-right-content img{
@@ -362,9 +388,9 @@ menu{
 
 .About-content-right-content h4{
     font-family: inter;
-    font-size: 15
-    px;
+    font-size: 12px;
     color: #89FF00;
+    letter-spacing: 1.1px;
     text-transform: uppercase;
     padding-bottom: 10px;
 }
@@ -401,6 +427,165 @@ menu{
 .About-content-right-content button:hover{
     background: white;
 }
+
+/* ---Games--- */
+
+.Games{
+    width: 100%;
+    background: #020710;
+}
+
+.Games-container{
+    width: 87%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 100px;
+}
+
+.Games-content{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 100px;
+}
+
+.Games-content-left{
+    width: 55%;
+    padding: 100px 10px 0 10px;
+    margin: 0 0 40px 0;
+}
+
+.Games-content-left-content{
+    width: 85%;
+}
+
+.Games-content-left-content h4{
+    font-family: inter;
+    font-size: 12px;
+    color: #89FF00;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding-bottom: 10px;
+}
+
+.Games-content-left-content h2{
+    font-family: space mono;
+    font-size: 35px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.Games-content-left-content p{
+    font-family: inter;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #989DA0;
+    padding-bottom: 30px
+}
+
+.Games-content-left-content .Discover-more{
+    display: flex;
+    color: #89FF00;
+    cursor: pointer;
+    gap: 3px;
+    position: relative;
+    width: max-content;
+    transition: 0.2s ease-in-out;
+}
+
+.Games-content-left-content .Discover-more h4{
+    text-transform: none;
+    font-size: 14px;
+}
+
+.Games-content-left-content .Discover-more::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: 120px;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0.7);
+    transform-origin: left;
+    transition: 0.2s ease-in-out;
+}
+
+.Games-content-left-content .Discover-more:hover:after{
+    transform: scaleX(1);
+}
+
+.Games-content-left-content .Discover-more h4{
+    padding-bottom: 0;
+}
+
+.Games-content-right{
+    position: relative;
+    width: 450px;
+}
+
+.Games-contetnt-overlay {
+    width: 100%;
+    height: 100%;
+    background: url(Am_bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    z-index: 1;
+    opacity: 1;
+}
+
+.Games-content-right-content img{
+    width: 100%;
+    z-index: 2;
+    position: relative;
+}
+
+.Games-content-right-content .Game_icon{
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 200px;
+    transform: rotate(30deg);
+}
+
+.Games-content-right-content .Text_star{
+    position: absolute;
+    left: -80px;
+    width: 80px;
+    transform: translate(50%, 50%);
+    animation: animate 8.5s infinite linear;
+}
+
+@keyframes animate{
+    0%{
+        transform: translate(50%, 50%) rotate(0deg);
+    }
+
+    90%{
+        transform: translate(50%, 50%) rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -655,25 +840,80 @@ menu{
         align-items: center;
     }
 
+    .About-content-left{
+        width: 400px;
+        margin: auto;
+    }
+
     .About-content-right{
         padding-top: 40px;
+        margin: 0;
         width: 100%;
     }
+    
 
     .About-content-right-content{
         text-align: center;
+    }
+
+    .About-content-right-content h4{
+        font-size: 13px;
+        letter-spacing: 2.5px;
     }
 
     .About-content-right-content p{
         padding: 0 120px 20px 120px ;
     }
 
+    /* ---Games--- */
+
+    .Games-content{
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 120px 50px 0 50px;
+    }
+
+    .Games-content-left{
+        padding-top: 40px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .Games-content-left-content{
+        text-align: center;
+    }
+
+    .Games-content-left-conten h2{
+        padding: 0 50px 20px 50px ;
+    }
+
+    .Games-content-left-content p{
+        padding: 0 10px 20px 10px ;
+    }
+
+    .Games-content-left-content .Discover-more{
+        /* justify-content: center */
+        margin: auto;
+    }
+
+    .Games-content-right-content .vew_img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        z-index: 2;
+        bottom: 4px;
+        position: relative;
+    }
+
+
 }
 
 @media (max-width:760px)  {
 
     .About-content-left{
-        width: 50%;
+        width: 55%;
     }
 
     .About-content-right-content h2{
@@ -688,6 +928,16 @@ menu{
 
     .About-content-right-content p{
         padding: 0 50px 20px 50px;
+    }
+
+    .Games-content-right-content .vew_img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        z-index: 2;
+        bottom: 4px;
+        position: relative;
     }
 }
 
@@ -845,20 +1095,18 @@ menu{
     }
 
     .About-content-left{
-        width: 50%;
+        margin: auto;
+        width: 65%;
     }
 
     .About-content-right{
         padding-top: 40px;
         width: 100%;
+        margin: 0;
     }
 
     .About-content-right-content{
         text-align: center;
-    }
-
-    .About-content-right-content h4{
-        font-size: 18px;
     }
 
     .About-content-right-content h2{
@@ -866,7 +1114,54 @@ menu{
     }
 
     .About-content-right-content p{
-        padding: 0 50px 20px 50px;
+        font-size: 15px;
+        padding: 0 0px 20px 0px;
+    }
+
+    .Games-content{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .Games-content-right{
+        margin: auto;
+        width: 80%;
+    }
+
+    .Games-content-left{
+        padding-top: 40px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .Games-content-left-content{
+        width: 100%;
+        text-align: center;
+    }
+
+    .Games-content-left-content h2{
+        font-size: 35px;
+    }
+
+    .Games-content-right-content p{
+        font-size: 15px;
+        padding: 0 0px 20px 0px;
+    }
+
+    .Games-content-left-content .Discover-more{
+        /* justify-content: center */
+        margin: auto;
+    }
+
+    .Games-content-right-content .Game_icon{
+        top: -30px;
+        right: 10px;
+        width: 150px ;
+    }
+
+    .Games-content-right-content .Text_star{
+        width: 65px;
+        left: -40px;
     }
 
 
@@ -961,25 +1256,23 @@ menu{
     }
 
     .About-content{
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
     }
 
     .About-content-left{
-        width: 50%;
+        margin: auto;
+        width: 65%;
     }
 
     .About-content-right{
         padding-top: 40px;
         width: 100%;
+        margin: 0;
     }
 
     .About-content-right-content{
         text-align: center;
-    }
-
-    .About-content-right-content h4{
-        font-size: 15px;
     }
 
     .About-content-right-content h2{
@@ -987,12 +1280,12 @@ menu{
     }
 
     .About-content-right-content p{
-        padding: 0 10px 20px 10px;
+        font-size: 15px;
+        padding: 0 0px 20px 0px;
     }
 
     .About-content-right-content button{
         padding: 10px 25px;
-        font-size: 14px;
     }
 }
 
@@ -1089,17 +1382,82 @@ menu{
         }
     }
 
+    .About-content{
+        flex-direction: column;
+        align-items: center;
+    }
+
     .About-content-left{
-        width: 60%;
+        margin: auto;
+        width: 64%;
+    }
+
+    .About-content-right{
+        padding-top: 40px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .About-content-right-content{
+        text-align: center;
+    }
+
+    .About-content-right-content h2{
+        font-size: 33px;
     }
 
     .About-content-right-content p{
         padding: 0 0 20px 0;
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .About-content-right-content button{
-        padding: 10px 20px;
         font-size: 12px;
+    }
+
+    .Games-content-right{
+        margin: auto;
+        width: 85%;
+    }
+
+    .Games-content-left{
+        padding-top: 40px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .Games-content-left-content{
+        width: 100%;
+        text-align: center;
+    }
+
+    .Games-content-left-content h2{
+        font-size: 33px;
+    }
+
+    .Games-content-left-content p{
+        font-size: 13px;
+        padding: 0 0px 20px 0px;
+    }
+
+    .Games-content-left-content .Discover-more{
+        /* justify-content: center */
+        margin: auto;
+        font-size: 15px;
+    }
+
+    .Games-content-left-content .Discover-more h4{
+        font-size: 12px;
+    }
+
+    .Games-content-right-content .Game_icon{
+        top: -30px;
+        right: 10px;
+        width: 105px ;
+    }
+
+    .Games-content-right-content .Text_star{
+        width: 50px;
+        left: -40px;
     }
 }
