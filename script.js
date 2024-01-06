@@ -1,6 +1,3 @@
-
-
-
 const nav = document;
 let menu = nav.querySelector("header");
 let isScrolling = false;
@@ -22,6 +19,9 @@ function throttleScroll() {
 window.addEventListener("scroll", throttleScroll);
 
 menu.style.transition = 'background-color 0.3s ease'; 
+
+
+
 
 
 
